@@ -559,6 +559,7 @@ CREATE TABLE `oxdeliveryset` (
   `OXTITLE_3` varchar(255) NOT NULL default '',
   `OXPOS` int(11) NOT NULL default '0' COMMENT 'Sorting',
   `OXTIMESTAMP` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP COMMENT 'Creation time',
+  `OXTRACKINGURL` varchar(255) NOT NULL default '' COMMENT 'Tracking URL (multilanguage)',
   PRIMARY KEY  (`OXID`),
   KEY `OXSHOPID` (`OXSHOPID`)
 ) ENGINE=InnoDB COMMENT 'Delivery (shipping) methods';
@@ -700,6 +701,7 @@ CREATE TABLE `oxmanufacturers` (
   `OXTITLE_3` varchar(255) NOT NULL default '',
   `OXSHORTDESC_3` varchar(255) NOT NULL default '',
   `OXSHOWSUFFIX` tinyint(1) NOT NULL default '1' COMMENT 'Show SEO Suffix in Category',
+  `OXSORT` int(11) NOT NULL default '0' COMMENT 'Sorting',
   `OXTIMESTAMP` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP COMMENT 'Timestamp',
   PRIMARY KEY  (`OXID`)
 ) ENGINE=InnoDB COMMENT 'Shop manufacturers';
