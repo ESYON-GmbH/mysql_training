@@ -84,7 +84,7 @@ mysql_training/
 │   │   └── mysql-docker.cnf    # MySQL server configuration
 │   └── dumps/
 │       ├── 1_database_schema.sql  # Database structure
-│       └── 2_initial_data.sql     # Sample data (if any)
+│       └── 2_demo_data.sql        # Sample data
 ├── mysql_data/                 # Persistent database storage (created automatically)
 └── README.md
 ```
