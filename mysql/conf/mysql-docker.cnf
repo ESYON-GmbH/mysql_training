@@ -1,0 +1,51 @@
+[mysqld]
+
+#################################################
+## Charset
+
+character-set-server=utf8
+collation-server=utf8_general_ci
+
+#################################################
+## Buffers
+
+key_buffer_size                 = 200M
+
+innodb_buffer_pool_size         = 250M
+innodb_log_buffer_size          = 10M
+
+tmp_table_size      = 200M
+max_heap_table_size = 200M
+
+open-files-limit  = 2048
+thread_cache_size = 12
+
+# Fast SQL import
+local-infile=1
+
+#################################################
+## Misc
+
+## direct access to files, avoid OS-caching (not posssible in docker)
+; innodb_flush_method=O_DIRECT
+
+transaction-isolation=REPEATABLE-READ
+;transaction-isolation=READ-COMMITTED
+
+#################################################
+## Query log
+
+slow_query_log = 1
+slow_query_log_file=/var/lib/mysql/slow.log
+log-queries-not-using-indexes
+long_query_time=1
+
+#################################################
+## Connections
+##
+## keep connections low because each conncetion
+## will have their own buffers
+## - prevent swapping here -
+
+max_connections    = 20
+max_allowed_packet = 16M
